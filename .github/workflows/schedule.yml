@@ -40,7 +40,7 @@ jobs:
           if [-z "$(git status --porcelain)"]; then
             echo "::set-output name=push::true"
           fi
-          shell: bash
+        shell: bash
           
       - name: Push changes
         if: steps.commit.outputs.push == 'true'
