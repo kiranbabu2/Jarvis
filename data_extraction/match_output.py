@@ -122,11 +122,11 @@ def main(match_id):
             df = get_rrr_rrd(df,col['ball_limit']/6)
 
 
-        if not os.path.isfile('./data/{}_v2.csv'.format(match_id)):
-            df.to_csv('./data/{}_v2.csv'.format(match_id), mode='w', index = False)
-        df.to_csv('./data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
+        if not os.path.isfile('data_extraction/data/{}_v2.csv'.format(match_id)):
+            df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)
+        df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
 
-        df1 = pd.read_csv('./data/{}_v2.csv'.format(match_id))
+        df1 = pd.read_csv('data_extraction/data/{}_v2.csv'.format(match_id))
         df1 = df1.drop_duplicates().sort_values(by=['current_innings','overs']).reset_index(drop=True)
 
         columns = ['inning', 'over', 'total_runs', 'player_dismissed', 'innings_wickets', 'innings_score', \
@@ -141,12 +141,12 @@ def main(match_id):
         df1 = df1[columns]
 
 
-        df1.drop_duplicates().to_csv('./data/{}_filtered.csv'.format(match_id),index=False)
+        df1.drop_duplicates().to_csv('data_extraction/data/{}_filtered.csv'.format(match_id),index=False)
     else:
         print('Match not yet started')  
     return
 
-df_match = pd.read_csv('current_matches.csv')
+df_match = pd.read_csv('data_extraction/current_matches.csv')
 for match in df_match['matches']:
     print(match)
     main(match)
