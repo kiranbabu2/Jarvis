@@ -30,6 +30,23 @@ jobs:
         run: |
           python data_extraction/fetch_latest_match_id.py
           python data_extraction/match_output.py
+          
+      - name: commit files
+        id: commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          if [-z "$(git status --porcelain)"]; then
+            echo "::set-output name=push::true"
+          fi
+          shell: bash
+          
+      - name: Push changes
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.SECRET_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
