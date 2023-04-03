@@ -28,8 +28,8 @@ jobs:
 
       - name: execute py script
         run: |
-          python data_extraction/fetch_latest_match_id.py
-          python data_extracion/match_output.py
+          python src/data_extraction/fetch_latest_match_id.py
+          python src/data_extracion/match_output.py
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
