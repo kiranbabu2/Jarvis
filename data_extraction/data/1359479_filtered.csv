@@ -1,0 +1,5 @@
+inning,over,total_runs,player_dismissed,innings_wickets,innings_score,score_target,remaining_target,run_rate,required_run_rate,runrate_diff,is_batting_team,is_toss_winner,team1,team2
+2,13,16,0,0,129,172,43,9.923076923076923,6.142857142857143,3.78021978021978,0,0,MI,RCB
+2,14,10,0,0,139,172,33,9.928571428571429,5.5,4.428571428571429,0,0,MI,RCB
+2,15,9,1,1,148,172,24,9.866666666666667,4.8,5.066666666666667,0,0,MI,RCB
+2,16,13,1,2,161,172,11,10.0625,2.75,7.3125,0,0,MI,RCB
