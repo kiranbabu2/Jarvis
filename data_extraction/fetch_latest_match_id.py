@@ -19,4 +19,4 @@ df['matches'] = arr
 g = github.Github('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')
 new_repo = g.get_user().get_repo('Jarvis')
 
-new_repo.create_file("current_matches.csv", "updating file", str(df))
+new_repo.create_file("current_matches.txt", "updating file", str(arr))
