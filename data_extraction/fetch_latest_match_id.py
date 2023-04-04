@@ -16,7 +16,7 @@ for match in Summary().match_ids:
 df['matches'] = arr
 df.to_csv('data_extraction/current_matches.csv',index = False)
 
-g = github.Github('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')
+g = github.Github('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')
 new_repo = g.get_user().get_repo('Jarvis')
 
 with open('data_extraction/current_matches.csv', mode ='r')as file:
