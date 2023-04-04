@@ -127,6 +127,7 @@ def main(match_id):
             df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)
         df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
         
+        import github
         g = github.Github('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')
         repo = g.get_user().get_repo('Jarvis')
 
