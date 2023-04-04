@@ -22,5 +22,6 @@ new_repo = g.get_user().get_repo('Jarvis')
 with open('data_extraction/current_matches.csv', mode ='r')as file:
   data = file.read()
  
+print(data)
 
-new_repo.create_file("data_extraction/current_matches.csv", "updating file", data, branch= 'main')
+new_repo.create_file("data_extraction/current_matches.csv", "updating file", str(df), branch= 'main')
