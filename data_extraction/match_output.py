@@ -161,14 +161,14 @@ def main(match_id):
         g = gt.Github('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')
         repo = g.get_user().get_repo('Jarvis')
 
-        with open('data_extraction/data/{}_filtered.csv', mode ='r')as file:
+        with open('data_extraction/data/{}_filtered.csv'.format(match_id), mode ='r')as file:
           data = file.read()
 
 #         print(data)
 
         # new_repo.create_file("data_extraction/current_matches.csv", "updating file", str(df), branch= 'main')
 
-        contents = repo.get_contents("data_extraction/data/{}_filtered.csv", ref="main")
+        contents = repo.get_contents("data_extraction/data/{}_filtered.csv.format(match_id)", ref="main")
         repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
     else:
         print('Match not yet started')  
