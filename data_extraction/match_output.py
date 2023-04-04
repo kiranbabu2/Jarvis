@@ -5,7 +5,7 @@ import os
 import time
 import csv
 import json
-import github
+import github as gt
 
 # match_id = '1339606'
 
@@ -127,8 +127,8 @@ def main(match_id):
             df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)
         df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
         
-        import github
-        g = github.Github('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')
+        
+        g = gt.Github('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')
         repo = g.get_user().get_repo('Jarvis')
 
         with open('data_extraction/data/{}_v2.csv', mode ='r')as file:
@@ -158,7 +158,7 @@ def main(match_id):
 
         df1.drop_duplicates().to_csv('data_extraction/data/{}_filtered.csv'.format(match_id),index=False)
         
-        g = github.Github('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')
+        g = gt.Github('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')
         repo = g.get_user().get_repo('Jarvis')
 
         with open('data_extraction/data/{}_filtered.csv', mode ='r')as file:
