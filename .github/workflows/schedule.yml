@@ -2,7 +2,7 @@ name: run test.py
 
 on:
   schedule:
-    - cron: '5 9-15 * 4 *'
+    - cron: '*/5 15-21 * 4 *'
 
 jobs:
   build:
