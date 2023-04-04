@@ -17,7 +17,7 @@ df['matches'] = arr
 df.to_csv('data_extraction/current_matches.csv',index = False)
 
 g = github.Github('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')
-repo = g.get_repo('Jarvis')
+repo = g.get_user().get_repo('Jarvis')
 
 with open('data_extraction/current_matches.csv', mode ='r')as file:
   data = file.read()
