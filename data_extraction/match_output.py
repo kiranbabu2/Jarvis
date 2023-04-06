@@ -122,24 +122,24 @@ def main(match_id):
             df['remaining_target'] = df['score_target'] - df['innings_score']
             df = get_rrr_rrd(df,col['ball_limit']/6)
 
-
-        if not os.path.isfile('data_extraction/data/{}_v2.csv'.format(match_id)):
-            df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)
-        df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
-        
-        
         g = gt.Github('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')
         repo = g.get_user().get_repo('Jarvis')
+        
+        if not os.path.isfile('data_extraction/data/{}_v2.csv'.format(match_id)):
+            df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)
+            
+            with open('data_extraction/data/{}_v2.csv'.format(match_id), mode ='r')as file:
+              data = file.read()
+            new_repo.create_file("data_extraction/data/{}_v2.csv".format(match_id), "init commit", data)
+            
+        else:
+            df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
 
-        with open('data_extraction/data/{}_v2.csv'.format(match_id), mode ='r')as file:
-          data = file.read()
+            with open('data_extraction/data/{}_v2.csv'.format(match_id), mode ='r')as file:
+              data = file.read()
 
-#         print(data)
-
-        # new_repo.create_file("data_extraction/current_matches.csv", "updating file", str(df), branch= 'main')
-
-        contents = repo.get_contents("data_extraction/data/{}_v2.csv".format(match_id), ref="main")
-        repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
+            contents = repo.get_contents("data_extraction/data/{}_v2.csv".format(match_id), ref="main")
+            repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
 
         df1 = pd.read_csv('data_extraction/data/{}_v2.csv'.format(match_id))
         df1 = df1.drop_duplicates().sort_values(by=['current_innings','overs']).reset_index(drop=True)
