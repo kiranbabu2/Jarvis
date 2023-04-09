@@ -137,7 +137,7 @@ def main(match_id):
             contents = repo.get_contents("data_extraction/data/{}_v2.csv".format(match_id), ref="main")
             repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
         except:
-            new_repo.create_file("data_extraction/data/{}_v2.csv".format(match_id), "init commit", data)
+            repo.create_file("data_extraction/data/{}_v2.csv".format(match_id), "init commit", data)
             
             
 
@@ -172,7 +172,7 @@ def main(match_id):
             contents = repo.get_contents("data_extraction/data/{}_filtered.csv".format(match_id), ref="main")
             repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
         except:
-            new_repo.create_file("data_extraction/data/{}_filtered.csv".format(match_id), "init commit", data)
+            repo.create_file("data_extraction/data/{}_filtered.csv".format(match_id), "init commit", data)
     else:
         print('Match not yet started')  
     return
