@@ -95,13 +95,6 @@ def get_team(team1,team2,batting_team,innings):
         else:
             return team1,team2
         
-def does_object_exists_in_branch(repo: Repository, branch: str, object_path: str) -> bool:
-    try:
-        repo.get_contents(object_path, branch)
-        return True
-    except github.UnknownObjectException:
-        return False
-        
 
 def main(match_id):
     m = Match(match_id)  
