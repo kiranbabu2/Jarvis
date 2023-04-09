@@ -95,6 +95,13 @@ def get_team(team1,team2,batting_team,innings):
         else:
             return team1,team2
         
+def does_object_exists_in_branch(repo: Repository, branch: str, object_path: str) -> bool:
+    try:
+        repo.get_contents(object_path, branch)
+        return True
+    except github.UnknownObjectException:
+        return False
+        
 
 def main(match_id):
     m = Match(match_id)  
@@ -126,20 +133,20 @@ def main(match_id):
         repo = g.get_user().get_repo('Jarvis')
         
         if not os.path.isfile('data_extraction/data/{}_v2.csv'.format(match_id)):
-            df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)
-            
-            with open('data_extraction/data/{}_v2.csv'.format(match_id), mode ='r')as file:
-              data = file.read()
-            new_repo.create_file("data_extraction/data/{}_v2.csv".format(match_id), "init commit", data)
-            
+            df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='w', index = False)            
         else:
             df.to_csv('data_extraction/data/{}_v2.csv'.format(match_id), mode='a', header=False, index = False)
 
-            with open('data_extraction/data/{}_v2.csv'.format(match_id), mode ='r')as file:
-              data = file.read()
-
+        with open('data_extraction/data/{}_v2.csv'.format(match_id), mode ='r')as file:
+          data = file.read()
+            
+        try:
             contents = repo.get_contents("data_extraction/data/{}_v2.csv".format(match_id), ref="main")
             repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
+        except:
+            new_repo.create_file("data_extraction/data/{}_v2.csv".format(match_id), "init commit", data)
+            
+            
 
         df1 = pd.read_csv('data_extraction/data/{}_v2.csv'.format(match_id))
         df1 = df1.drop_duplicates().sort_values(by=['current_innings','overs']).reset_index(drop=True)
@@ -168,8 +175,11 @@ def main(match_id):
 
         # new_repo.create_file("data_extraction/current_matches.csv", "updating file", str(df), branch= 'main')
 
-        contents = repo.get_contents("data_extraction/data/{}_filtered.csv".format(match_id), ref="main")
-        repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
+        try:
+            contents = repo.get_contents("data_extraction/data/{}_filtered.csv".format(match_id), ref="main")
+            repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
+        except:
+            new_repo.create_file("data_extraction/data/{}_filtered.csv".format(match_id), "init commit", data)
     else:
         print('Match not yet started')  
     return
