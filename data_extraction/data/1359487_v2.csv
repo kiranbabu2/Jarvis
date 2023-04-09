@@ -1,0 +1,4 @@
+innings_score,innings_wickets,current_innings,total_runs,player_dismised,overs,team1,team2,batting_team,toss_decision,toss_winner,score_target,run_rate,remaining_target,required_run_rate,run_rate_diff
+24,0,1,7,0,3,GT,KKR,GT,bat,GT,-1,8.0,-1,-1,-1
+17,0,1,13,0,2,GT,KKR,GT,bat,GT,-1,8.5,-1,-1,-1
+4,0,1,4,0,1,GT,KKR,GT,bat,GT,-1,4.0,-1,-1,-1
