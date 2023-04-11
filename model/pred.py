@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 
 #write a method to get match_id from the user
 def get_match_id():
-    df_current = pd.read_csv('../current_matches.csv')
-    match_id = df_current['   matches'][0].split(' ')[-1]
+    df_current = pd.read_csv('../data_extraction/data/current_matches.csv')
+    match_id = df_current['matches'].values[-1]
     return match_id
 
 # write a method to read the data with match_id as parameter
