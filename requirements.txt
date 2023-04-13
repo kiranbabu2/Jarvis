@@ -1,0 +1,12 @@
+matplotlib==3.7.1
+matplotlib-inline==0.1.6
+numpy==1.24.2
+pandas==1.5.3
+xgboost==1.7.4
+datetime
+requests
+bs4
+pandas
+numpy
+lxml
+PyGithub

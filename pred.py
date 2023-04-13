@@ -2,17 +2,18 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 import matplotlib.pyplot as plt
-
+import github as gt
+from github_helper import *
 
 #write a method to get match_id from the user
 def get_match_id():
-    df_current = pd.read_csv('../data_extraction/data/current_matches.csv')
+    df_current = pd.read_csv('./current_matches.csv')
     match_id = df_current['matches'].values[-1]
     return match_id
 
 # write a method to read the data with match_id as parameter
 def read_data(match_id):
-    df = pd.read_csv('../data_extraction/data/{}_filtered.csv'.format(match_id))
+    df = pd.read_csv('./data/{}.csv'.format(match_id))
     #append match_id to the dataframe
     df['match_id'] = match_id
     return df
@@ -81,8 +82,10 @@ def get_plot1(out_df,match_id):
     #plt.show()
 
     #save the plot
-    plt.savefig('../model/plot_1.png')
+    plt.savefig('./plot_1.png')
     plt.close()
+    data = get_image_contents('./plot_1.png')
+    save_file(repo,data,'./plot_1.png','Added plot_1.png')
 
 def get_plot2(out_df,match_id,preds,team_1,team_2):
     plt.plot(100*preds)
@@ -103,8 +106,10 @@ def get_plot2(out_df,match_id,preds,team_1,team_2):
 
     #make the background more beautiful
 
-    plt.savefig('../model/plot_2.png')
+    plt.savefig('./plot_2.png')
     plt.close()
+    data = get_image_contents('./plot_2.png')
+    save_file(repo,data,'./plot_2.png','Added plot_2.png')
 
 def get_plot3(out_df,match_id,preds,team_1,team_2,innings1_length,innings2_length):
     fig, ax1 = plt.subplots()
@@ -147,20 +152,27 @@ def get_plot3(out_df,match_id,preds,team_1,team_2,innings1_length,innings2_lengt
 
     plt.title('Predictions for {} vs {} with run rate in each innings'.format(team_1,team_2))
     #plt.show()
-    plt.savefig('../model/plot_3.png')
+    plt.savefig('./plot_3.png')
     plt.close()
+    data = get_image_contents('./plot_3.png')
+    save_file(repo,data,'./plot_3.png','Added plot_3.png')
 
 
 def main():
-    match_id = get_match_id()
-    df = read_data(match_id)
-    model = read_model()
-    preds = get_preds(df,model)
-    out_df,innings1_length,innings2_length = get_result_df(df,preds)
-    get_plot1(out_df,match_id)
-    get_plot2(out_df,match_id,preds,out_df.Team1.values[0],out_df.Team2.values[0])
-    get_plot3(out_df,match_id,preds,out_df.Team1.values[0],out_df.Team2.values[0],innings1_length,innings2_length)
-    out_df.to_csv('../model/{}_results.csv'.format(match_id))
+    try:
+        match_id = get_match_id()
+        df = read_data(match_id)
+        model = read_model()
+        preds = get_preds(df,model)
+        out_df,innings1_length,innings2_length = get_result_df(df,preds)
+        get_plot1(out_df,match_id)
+        get_plot2(out_df,match_id,preds,out_df.Team1.values[0],out_df.Team2.values[0])
+        get_plot3(out_df,match_id,preds,out_df.Team1.values[0],out_df.Team2.values[0],innings1_length,innings2_length)
+        out_df.to_csv('./data/{}_results.csv'.format(match_id))
+        data = get_csv_contents('./data/{}_results.csv'.format(match_id))
+        save_file(repo,data,'./data/{}_results.csv'.format(match_id),'Added Results')
+    except:
+        print('Output not generated')
 
 
 

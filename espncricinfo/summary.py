@@ -8,7 +8,7 @@ class Summary(object):
         self.url = "http://static.cricinfo.com/rss/livescores.xml"
         self.xml = self.get_xml()
         self.match_ids = self._match_ids()
-        self.matches = self._build_matches()
+#         self.matches = self._build_matches()
 
     def get_xml(self):
         r = requests.get(self.url)
