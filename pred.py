@@ -77,7 +77,7 @@ def get_plot1(out_df,match_id):
     plt.xlabel('Innings_score')
 
     # Basic stacked area chart.
-    plt.stackplot(over,Team1, Team2, labels=['{}'.format(team_2),'{}'.format(team_1)],colors=['blue','#FFCCCB'])
+    plt.stackplot(over,Team1, Team2, labels=['{}'.format(team_1),'{}'.format(team_2)],colors=['blue','#FFCCCB'])
     plt.legend(loc='upper left')
     #plt.show()
 
@@ -100,7 +100,7 @@ def get_plot2(out_df,match_id,preds,team_1,team_2):
     plt.fill_between(range(len(preds)), 100*preds, 50, where=100*preds>50, facecolor='green', alpha=0.5)
 
     #make the plot more beautiful
-    plt.title('Predictions for {} - Match ID {}'.format(team_2, match_id))
+    plt.title('Predictions for {} - Match ID {}'.format(team_1, match_id))
     plt.xlabel('Inning_Over')
     plt.ylabel('Probability of winning (%)')
 
@@ -132,7 +132,7 @@ def get_plot3(out_df,match_id,preds,team_1,team_2,innings1_length,innings2_lengt
     #set axis1 ylabel first half as team1 and second half as team2
     ax1.set_yticks(np.arange(0, 10, 1))
 
-    label = '{}                                  {}'.format(team_2,team_1)
+    label = '{}                                  {}'.format(team_1,team_2)
 
     ax1.set_ylabel(label)
 
