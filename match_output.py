@@ -114,7 +114,7 @@ def main(match_id):
         df['score_target'] = col['target']
         df['run_rate'] = df['innings_score']/df['over']
         if str(col['target']) == str(0):
-            df['remaining_target'],df['score_target'],df['required_run_rate'],df['run_rate_diff'] = -1,-1,-1,-1
+            df['remaining_target'],df['score_target'],df['required_run_rate'],df['runrate_diff'] = -1,-1,-1,-1
         else:
             df['remaining_target'] = df['score_target'] - df['innings_score']
             df = get_rrr_rrd(df,col['ball_limit']/6)
