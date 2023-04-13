@@ -50,7 +50,7 @@ def get_result_df(df,preds):
     out_df['total_runs'] = df.total_runs.values
     out_df['player_dismissed'] = df.player_dismissed.values
     out_df['predictions'] = list(preds)
-    #out_df['run_rate_imp'] = val_df.run_rate_imp.values
+    out_df['run_rate'] = df.run_rate.values
     out_df['wickets_in_over'] = df.player_dismissed.values
     out_df['required_run_rate'] = df.required_run_rate.values
     out_df['predicted_team1'] = preds
@@ -116,8 +116,8 @@ def get_plot3(out_df,match_id,preds,team_1,team_2,innings1_length,innings2_lengt
     # set the figure size
     fig.set_size_inches(10, 10)
     ax1.set_xlabel('innings_over')
-    ax1.set_ylabel('run_rate')
-    ax1.bar(out_df['innings_over'], out_df['innings_score'], color=['yellow']*innings1_length + ['#90ee90']*innings2_length)
+    ax1.set_ylabel('{}                                  {}\n\n Run Rate'.format(team_1,team_2))
+    ax1.bar(out_df['innings_over'], out_df['run_rate'], color=['yellow']*innings1_length + ['#90ee90']*innings2_length)
     ax1.legend(loc=2)
     # make the x axis labels vertical
     plt.xticks(rotation=90)
@@ -126,31 +126,15 @@ def get_plot3(out_df,match_id,preds,team_1,team_2,innings1_length,innings2_lengt
     wicket_indices = [i for i, x in enumerate(out_df['player_dismissed']) if x >= 1]
     ax2.plot(out_df['innings_over'], np.array(out_df['predicted_team1'])*100, color='blue',marker='o',markevery=wicket_indices,markerfacecolor='red' )
 
-
-    #change the size of ma
-
     #set axis1 ylabel first half as team1 and second half as team2
-    ax1.set_yticks(np.arange(0, 10, 1))
-
-    label = '{}                                  {}'.format(team_1,team_2)
-
-    ax1.set_ylabel(label)
-
-    #make ax2 y ticks from 100 to 50 in 1st half and 50 to 100 in 2nd half
-
-
-    # remove yticks for ax1
-    ax1.set_yticks([])
-
-
-
-
+    ax1.set_yticks(np.arange(0, 20, 1))
+    
     #make a horizonal line for pred at 0.5
     ax2.plot(out_df['innings_over'],np.array([50]*len(out_df['predicted_team1'])),color='red', marker='o')
     ax2.set_yticks(np.arange(0, 105, 5))
     ax2.legend(loc=1)
 
-    plt.title('Predictions for {} vs {} with run rate in each innings'.format(team_1,team_2))
+    plt.title('Predictions for {} vs {}'.format(team_1,team_2))
     #plt.show()
     plt.savefig('./plot_3.png')
     plt.close()
