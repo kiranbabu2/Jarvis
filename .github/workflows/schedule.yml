@@ -24,6 +24,7 @@ jobs:
 
       - name: execute py script
         run: |
+          python fetch_latest_match_id.py
           python match_output.py
           python pred.py
         
