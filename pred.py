@@ -7,7 +7,9 @@ from github_helper import *
 
 #write a method to get match_id from the user
 def get_match_id():
-    df_current = pd.read_csv('./current_matches.csv')
+    cm_contents = repo.get_contents("./current_matches.csv", ref="main")
+    df_current = pd.read_csv(io.StringIO(cm_contents.decoded_content.decode('utf-8')))
+#     df_current = pd.read_csv('./current_matches.csv')
     match_id = df_current['matches'].values[-1]
     return match_id
 
