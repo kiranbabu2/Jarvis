@@ -27,7 +27,7 @@ jobs:
       - name: Run image
         uses: addnab/docker-run-action@v3
         with:
-          image: kiranbabuabcd/jarvis:latest
+          image: kiranbabuabcd/jarvis-3:latest
           run: |
               echo 'running python file'
               python ./fetch_latest_match_id.py
