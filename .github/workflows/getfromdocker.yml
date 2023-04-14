@@ -3,6 +3,10 @@ name: run docker image
 on:      
   schedule:
     - cron: '*/5 * * * *'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
