@@ -1,4 +1,4 @@
-name: run test.py
+name: run docker image
 
 on:      
   schedule:
