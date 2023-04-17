@@ -126,26 +126,26 @@ def main(match_id):
 
         df = df[columns]
         try:
-            contents = repo.get_contents("./data/{}.csv".format(match_id), ref="main")
+            contents = repo.get_contents("./data/{}.csv".format(match_id), ref="dev")
             existing_df = pd.read_csv(io.StringIO(contents.decoded_content.decode('utf-8')))
             df = existing_df.append(df, ignore_index=True)
             df = df.drop_duplicates(subset=['inning', 'over'], keep='last').sort_values(by=['inning','over']).reset_index(drop=True)
             df.to_csv('./data/{}.csv'.format(match_id), index = False) 
             with open('./data/{}.csv'.format(match_id), mode ='r') as file:
                 data = file.read()
-            repo.update_file(contents.path, "more tests", data, contents.sha, branch="main")
+            repo.update_file(contents.path, "more tests", data, contents.sha, branch="dev")
         except:
             df = df.drop_duplicates(subset=['inning', 'over'], keep='last').sort_values(by=['inning','over']).reset_index(drop=True)
             df.to_csv('./data/{}.csv'.format(match_id), index = False)
             with open('./data/{}.csv'.format(match_id), mode ='r') as file:
                 data = file.read()
-            repo.create_file("./data/{}.csv".format(match_id), "init commit", data)
+            repo.create_file("./data/{}.csv".format(match_id), "init commit", data, branch='dev')
     else:
         print('Match not yet started')  
     return
 
 
-cm_contents = repo.get_contents("./current_matches.csv", ref="main")
+cm_contents = repo.get_contents("./current_matches.csv", ref="dev")
 df_match = pd.read_csv(io.StringIO(cm_contents.decoded_content.decode('utf-8')))
 for match in df_match['matches']:
     print(match)
