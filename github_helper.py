@@ -16,8 +16,8 @@ def get_image_contents(file_path):
 
 def save_file(repo, data,git_path, commit_message):
     try:
-        contents = repo.get_contents(git_path, ref="dev")
-        repo.update_file(contents.path,commit_message, data, contents.sha, branch="dev")
+        contents = repo.get_contents(git_path, ref="main")
+        repo.update_file(contents.path,commit_message, data, contents.sha, branch="main")
     except:
         repo.create_file(git_path, commit_message,data)
     return
