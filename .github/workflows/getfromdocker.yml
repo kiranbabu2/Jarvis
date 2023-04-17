@@ -1,7 +1,11 @@
 name: run docker image
 
 # adding for change
-on:      
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   schedule:
     - cron: '* 14-18 * 4,5 *'
 
