@@ -1,3 +1,7 @@
 inning,over,total_runs,player_dismissed,innings_wickets,innings_score,score_target,remaining_target,run_rate,required_run_rate,runrate_diff,is_batting_team,is_toss_winner,team1,team2
 1,1,6,0,0,6,-1,-1,6.0,-1,-1,1,0,MI,SRH
 1,2,9,0,0,15,-1,-1,7.5,-1,-1,1,0,MI,SRH
+1,4,5,0,0,33,-1,-1,8.25,-1,-1,1,0,MI,SRH
+1,5,9,1,1,42,-1,-1,8.4,-1,-1,1,0,MI,SRH
+1,6,11,0,1,53,-1,-1,8.833333333333334,-1,-1,1,0,MI,SRH
+1,7,3,0,1,56,-1,-1,8.0,-1,-1,1,0,MI,SRH
