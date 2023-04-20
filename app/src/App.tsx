@@ -34,6 +34,12 @@ let theme = createTheme({
     },
     RR: {
       main: colors.blue.A700
+    },
+    LSG: {
+      main: colors.lightBlue.A700
+    },
+    GT: {
+      main: colors.blueGrey.A700
     }
   },
 })

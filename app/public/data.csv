@@ -1,2 +1,4 @@
 matchType,team1,team2,team1ProbRavens,team1ProbGoogle,team1ProbCricbuzz
 current,RCB,MI,45.5,60,65
+previous,SRH,KKR,50,50,30
+next,DC,PK,40,60,50

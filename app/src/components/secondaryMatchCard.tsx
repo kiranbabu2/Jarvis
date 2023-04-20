@@ -8,7 +8,7 @@ interface MatchProps {
     plot: string;
 }
 
-const style = { objecFit: "cover", width: "100%", height: "100%", backgroundSize: "cover" };
+const style = { objecFit: "cover", width: "100%", height: "35em", backgroundSize: "cover" };
 function SecondaryMatchCard(props: MatchProps) {
     const { title, plot } = props;
     return (

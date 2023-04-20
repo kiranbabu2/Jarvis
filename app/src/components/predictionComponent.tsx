@@ -20,6 +20,8 @@ const StyledProgress = styled(LinearProgress, {
             team1 === "RR" ? theme.palette.RR?.main :
             team1 === "SRH" ? theme.palette.SRH?.main :
             team1 === "PK" ? theme.palette.PK?.main :
+            team1 === "LSG" ? theme.palette.LSG?.main :
+            team1 === "GT" ? theme.palette.GT?.main :
             "palevioletred"},
     
         backgroundColor: 
@@ -31,6 +33,8 @@ const StyledProgress = styled(LinearProgress, {
             team2 === "RR" ? theme.palette.RR?.main :
             team2 === "SRH" ? theme.palette.SRH?.main :
             team2 === "PK" ? theme.palette.PK?.main :
+            team1 === "LSG" ? theme.palette.LSG?.main :
+            team1 === "GT" ? theme.palette.GT?.main :
             "mediumaquamarine",
 
   }));

@@ -45,9 +45,6 @@ const PageContent = () => {
   const getCurrentMatch = async () => {
     const response = await fetch('https://api.github.com/repos/kiranbabu2/Jarvis/contents/current_matches.csv', {
       method: 'get',
-      headers: new Headers({
-        'Authorization': 'token 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'
-      })
     })
     console.log(response);
     const parsedResponse = await new Response(response.body).json();
@@ -59,9 +56,6 @@ const PageContent = () => {
   const listFiles = async () => {
     const response = await fetch('https://api.github.com/repos/kiranbabu2/Jarvis/contents/data/', {
       method: 'get',
-      headers: new Headers({
-        'Authorization': 'token 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'
-      })
     })
     const parsedResponse = await new Response(response.body).json();
     return parsedResponse;
@@ -70,18 +64,12 @@ const PageContent = () => {
   const getCharts = async () => {
     const streamPlot1 = await fetch('https://api.github.com/repos/kiranbabu2/Jarvis/contents/plot_3.png', {
       method: 'get',
-      headers: new Headers({
-        'Authorization': 'token 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'
-      })
     });
 
     const plot1= `data:image/png;base64, ` + (await new Response(streamPlot1.body).json()).content;
 
     const streamPlot2 = await fetch('https://api.github.com/repos/kiranbabu2/Jarvis/contents/plot_1.png', {
       method: 'get',
-      headers: new Headers({
-        'Authorization': 'token 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'
-      })
     })
 
     const plot2 = `data:image/png;base64, ` + (await new Response(streamPlot2.body).json()).content;
@@ -106,9 +94,6 @@ const PageContent = () => {
     // make call and get csv data
     const response = await fetch(`https://api.github.com/repos/kiranbabu2/Jarvis/contents/data/${currentMatchId}_results.csv`, {
       method: 'get',
-      headers: new Headers({
-        'Authorization': 'token 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'
-      })
     })
 
 
@@ -141,7 +126,6 @@ const PageContent = () => {
     getCSV()
   }, [])
 
-
   return (
     <>
       <Box sx={{ mt: 5, mx: 3 }}>
@@ -158,7 +142,9 @@ const PageContent = () => {
               title="Today's Match"
               team1={currentMatch.Team1}
               team2={currentMatch.Team2}
-              team1prob={currentMatch.predicted_team1} />
+              team1prob={currentMatch.predicted_team1} 
+              matchResults={values} 
+              />
           </Grid>
           <Grid item xs={12} md={4} sx={{ opacity: 0.5 }}>
             {/* <MatchCard

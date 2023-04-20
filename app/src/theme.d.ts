@@ -11,6 +11,8 @@ declare module '@mui/material/styles' {
         DC?:PaletteColor,
         PK?:PaletteColor,
         RR?:PaletteColor,
+        LSG?:PaletteColor,
+        GT?:PaletteColor,
     }
     interface PaletteOptions{
         MI?: PaletteColorOptions,
@@ -20,7 +22,9 @@ declare module '@mui/material/styles' {
         SRH?: PaletteColorOptions,
         DC?: PaletteColorOptions,
         PK?: PaletteColorOptions,
-        RR?: PaletteColorOptions
+        RR?: PaletteColorOptions,
+        LSG?:PaletteColorOptions,
+        GT?:PaletteColorOptions,
     }
 }
   
