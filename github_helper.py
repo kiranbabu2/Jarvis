@@ -1,6 +1,6 @@
 import github as gt
 
-g = gt.Github('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')
+g = gt.Github('XXXXXXXXXXXXXXXXXXXXX')
 repo = g.get_user().get_repo('Jarvis')
 
 def get_csv_contents(file_path):
