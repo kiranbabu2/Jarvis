@@ -1,3 +1,5 @@
 ,Team1,match_id,is_batting_team,Team2,innings_over,innings_score,innings_wickets,score_target,total_runs,player_dismissed,predictions,run_rate,wickets_in_over,required_run_rate,predicted_team1,predicted_team2
 0,SRH,1359503,1,CSK,1_1,6,0,-1,6,0,0.4439756,6.0,0,-1,0.4439756,0.55602443
 1,SRH,1359503,1,CSK,1_2,13,0,-1,7,0,0.46794167,6.5,0,-1,0.46794167,0.53205836
+2,SRH,1359503,1,CSK,1_3,23,0,-1,10,0,0.49635875,7.666666666666667,0,-1,0.49635875,0.50364125
+3,SRH,1359503,1,CSK,1_4,34,0,-1,11,0,0.53605527,8.5,0,-1,0.53605527,0.46394473
