@@ -12,8 +12,8 @@ interface MatchProps {
 
 function MatchCard(props: MatchProps) {
   const { title, team1, team2, team1prob, matchResults } = props;
-  const team1Logo = "/assets/images/" + team1 + ".png";
-  const team2Logo = "/assets/images/" + team2 + ".png";
+  const team1Logo = "assets/images/" + team1 + ".png";
+  const team2Logo = "assets/images/" + team2 + ".png";
   console.log('Match: ', matchResults);
   console.log('test: ', matchResults.data[matchResults.data.length]);
   const isteamTwoBatting = matchResults.data[matchResults.data.length - 1].innings_over[0] === '2';
