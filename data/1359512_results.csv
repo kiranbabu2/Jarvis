@@ -1,2 +1,5 @@
 ,Team1,match_id,is_batting_team,Team2,innings_over,innings_score,innings_wickets,score_target,total_runs,player_dismissed,predictions,run_rate,wickets_in_over,required_run_rate,predicted_team1,predicted_team2
 0,LSG,1359512,1,PBKS,1_1,2,0,-1,2,0,0.4649202,2.0,0,-1,0.4649202,0.53507984
+1,LSG,1359512,1,PBKS,1_2,19,0,-1,17,0,0.49542737,9.5,0,-1,0.49542737,0.50457263
+2,LSG,1359512,1,PBKS,1_3,35,0,-1,16,0,0.6601819,11.666666666666666,0,-1,0.6601819,0.33981812
+3,LSG,1359512,1,PBKS,1_4,45,1,-1,10,1,0.57980275,11.25,1,-1,0.57980275,0.42019725
