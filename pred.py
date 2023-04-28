@@ -118,7 +118,7 @@ def get_plot3(out_df,match_id,preds,team_1,team_2,innings1_length,innings2_lengt
     # set the figure size
     fig.set_size_inches(10, 10)
     ax1.set_xlabel('innings_over')
-    ax1.set_ylabel('{}                                  {}\n\n Run Rate'.format(team_1,team_2))
+    ax1.set_ylabel('{}                                  {}\n\n Run Rate'.format(team_2,team_1))
     ax1.bar(out_df['innings_over'], out_df['run_rate'], color=['yellow']*innings1_length + ['#90ee90']*innings2_length)
     ax1.legend(loc=2)
     # make the x axis labels vertical
