@@ -1,0 +1,5 @@
+inning,over,total_runs,player_dismissed,innings_wickets,innings_score,score_target,remaining_target,run_rate,required_run_rate,runrate_diff,is_batting_team,is_toss_winner,team1,team2
+2,17,17,0,4,170,201,31,10.0,10.333333333333334,-0.3333333333333339,0,1,CSK,PBKS
+2,18,9,1,5,179,201,22,9.944444444444445,11.0,-1.0555555555555554,0,1,CSK,PBKS
+2,19,13,1,6,192,201,9,10.105263157894736,9.0,1.1052631578947363,0,1,CSK,PBKS
+2,20,9,0,6,201,201,0,10.05,99.0,-88.95,0,1,CSK,PBKS
