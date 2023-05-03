@@ -1,0 +1,5 @@
+inning,over,total_runs,player_dismissed,innings_wickets,innings_score,score_target,remaining_target,run_rate,required_run_rate,runrate_diff,is_batting_team,is_toss_winner,team1,team2
+1,16,10,0,5,83,-1,-1,5.1875,-1,-1,1,0,LSG,CSK
+1,17,15,0,5,98,-1,-1,5.764705882352941,-1,-1,1,0,LSG,CSK
+1,18,7,1,6,105,-1,-1,5.833333333333333,-1,-1,1,0,LSG,CSK
+1,19,20,0,6,125,-1,-1,6.578947368421052,-1,-1,1,0,LSG,CSK
