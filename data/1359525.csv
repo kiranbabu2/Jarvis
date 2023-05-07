@@ -1,0 +1,5 @@
+inning,over,total_runs,player_dismissed,innings_wickets,innings_score,score_target,remaining_target,run_rate,required_run_rate,runrate_diff,is_batting_team,is_toss_winner,team1,team2
+2,17,12,0,4,152,228,76,8.941176470588236,25.333333333333332,-16.392156862745097,0,0,GT,LSG
+2,18,3,1,5,155,228,73,8.61111111111111,36.5,-27.88888888888889,0,0,GT,LSG
+2,19,11,2,7,166,228,62,8.736842105263158,62.0,-53.26315789473684,0,0,GT,LSG
+2,20,5,0,7,171,228,57,8.55,99.0,-90.45,0,0,GT,LSG
