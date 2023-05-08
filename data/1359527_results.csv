@@ -1,2 +1,4 @@
 ,Team1,match_id,is_batting_team,Team2,innings_over,innings_score,innings_wickets,score_target,total_runs,player_dismissed,predictions,run_rate,wickets_in_over,required_run_rate,predicted_team1,predicted_team2
 0,PBKS,1359527,1,KKR,1_1,12,0,-1,12,0,0.541192,12.0,0,-1,0.541192,0.458808
+1,PBKS,1359527,1,KKR,1_2,21,1,-1,9,1,0.3519622,10.5,1,-1,0.3519622,0.6480378
+2,PBKS,1359527,1,KKR,1_3,26,1,-1,5,0,0.4618832,8.666666666666666,0,-1,0.4618832,0.5381168
