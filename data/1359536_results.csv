@@ -1,2 +1,5 @@
 ,Team1,match_id,is_batting_team,Team2,innings_over,innings_score,innings_wickets,score_target,total_runs,player_dismissed,predictions,run_rate,wickets_in_over,required_run_rate,predicted_team1,predicted_team2
 0,GT,1359536,1,SRH,1_1,5,1,-1,5,1,0.39592436,5.0,1,-1,0.39592436,0.6040757
+1,GT,1359536,1,SRH,1_2,17,1,-1,12,0,0.46749276,8.5,0,-1,0.46749276,0.53250724
+2,GT,1359536,1,SRH,1_3,32,1,-1,15,0,0.4292682,10.666666666666666,0,-1,0.4292682,0.57073176
+3,GT,1359536,1,SRH,1_4,50,1,-1,18,0,0.6664774,12.5,0,-1,0.6664774,0.33352262
