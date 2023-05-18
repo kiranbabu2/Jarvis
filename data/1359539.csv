@@ -3,3 +3,5 @@ inning,over,total_runs,player_dismissed,innings_wickets,innings_score,score_targ
 1,2,5,0,0,7,-1,-1,3.5,-1,-1,1,0,SRH,RCB
 1,3,4,0,0,11,-1,-1,3.6666666666666665,-1,-1,1,0,SRH,RCB
 1,4,16,0,0,27,-1,-1,6.75,-1,-1,1,0,SRH,RCB
+1,5,6,2,2,33,-1,-1,6.6,-1,-1,1,0,SRH,RCB
+1,6,16,0,2,49,-1,-1,8.166666666666666,-1,-1,1,0,SRH,RCB
